@@ -14,11 +14,11 @@ terminal="kgx -e" # terminal for log
 data=$(date +'%d')
 target="$weekday"
 current=$(date +'%a')
-log="$HOME/.scripts/av/log" # log file
-url="$HOME/.scripts/av/last" # date of the last scan
+log="$HOME/scripts/av/log" # log file
+url="$HOME/scripts/av/last" # date of the last scan
 last=$(cat $url)
-icon1="$HOME/.scripts/av/img/icon1.svg"
-icon2="$HOME/.scripts/av/img/icon2.svg"
+icon1="$HOME/scripts/av/img/icon1.svg"
+icon2="$HOME/scripts/av/img/icon2.svg"
 
 
 
