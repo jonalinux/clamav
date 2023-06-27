@@ -7,17 +7,18 @@
 
 # Set Scan
 weekday="Tue" # see date +'%d'
-dirscan="/path" # directory of scan
+dirscan="/home/jonathan/Downloads" # directory of scan
+terminal="kgx -e" # terminal for log
 
 #variable
 data=$(date +'%d')
 target="$weekday"
 current=$(date +'%a')
-log="$HOME/scripts/av/log" # log file
-url="$HOME/scripts/av/last" # date of the last scan
+log="$HOME/.scripts/av/log" # log file
+url="$HOME/.scripts/av/last" # date of the last scan
 last=$(cat $url)
-icon1="$HOME/scripts/av/img/icon1.svg"
-icon2="$HOME/scripts/av/img/icon2.svg"
+icon1="$HOME/.scripts/av/img/icon1.svg"
+icon2="$HOME/.scripts/av/img/icon2.svg"
 
 
 
@@ -36,7 +37,7 @@ if [ "$target" = "$current" ]; then # check if it is the day of the week to scan
              ACTION=$(notify-send -i "$icon1" --action="Read Log" --action="Close"  "ClamAV"  "System Protect"   -u normal  -u critical )
                 case "$ACTION" in
                       "0")
-                         vim $log
+                         $terminal vim $log
                          ;;
                       "1")
                          exit
@@ -46,7 +47,7 @@ if [ "$target" = "$current" ]; then # check if it is the day of the week to scan
              ACTION=$(notify-send -i "$icon2" --action="Read log" --action="Close"  "ClamAV"  "$MALWARE Malware Removed"  -u critical )
                 case "$ACTION" in
                       "0")
-                         vim $log
+                         $terminal vim $log
                          ;;
                       "1")
                          exit
