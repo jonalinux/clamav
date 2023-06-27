@@ -7,7 +7,7 @@
 
 # Set Scan
 weekday="Tue" # see date +'%d'
-dirscan="/home/jonathan/Downloads" # directory of scan
+dirscan="/your/scan/path" # directory of scan
 terminal="kgx -e" # terminal for log
 
 #variable
